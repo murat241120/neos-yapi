@@ -1,0 +1,7 @@
+.cover{
+    background: url('/static/kayıtresim.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-top: -1.5%;
+    height: 100vh;
+}

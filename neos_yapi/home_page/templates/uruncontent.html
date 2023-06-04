@@ -1,0 +1,111 @@
+{% load static %}
+
+<!--ürünler-->
+<div class="baskategori"><h2 id="t"><span>ÜRÜNLERİMİZ</span></h2><hr style="color: tomato; width: 50%; border-width: 3px; margin: auto;"></div>
+<div class="urun-container">  
+  <div class="kategori"> 
+      <div class="kategoribaslik"><h3>KATEGORİLER</h3><hr style="color: tomato; border-width: 4px;"></div>
+      {% for i in kategori %}
+      <ul>   
+          <li><a href="/urunler/{{i.id}}">{{i.kategori_isim}}</a><hr class="urunhr"></li> 
+      </ul>
+      {% endfor %}
+      <div class="katalog">
+        <a  href='#'>
+      <button type="button" class="btn-secondary">KATALOG
+          <img src="{% static 'logo/catalog.png' %}" alt="katalog">
+      </button>
+    </a>   
+    </div>
+  </div>
+  <div class="uruncontainer-alt">
+  <div class="urungoster">
+      <div class="gosterurun-1">
+          <div class="card-group">
+     <div class="card">
+            <img src="{% static 'photos/market-1.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">BİRBİRİNDEN ÇEŞİTLİ ALET TAKIMLARI</h5> 
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa.</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'photos/market-2.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">FARKLI BİRİMLER İLE ÖLÇÜ ALETLERİ</h5> 
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa.</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'photos/market-3.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">TUĞLA VE YALITIM MALZEMELERİ</h5>
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa.</p>
+          </div>
+        </div>
+          </div>
+      </div>
+    <div class="gosterurun-2">
+      <div class="card-group">
+        <div class="card">
+            <img src="{% static 'photos/market-4.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">HER ÖLÇÜDE VİDA VE ÇİVİLER</h5>
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa..</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'photos/market-5.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">ELEKTRİKLİ EL MAKİNALARI</h5>
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa.</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'photos/market-6.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">ŞARJLI EL MAKİNALARI</h5>
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa.</p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    <div class="gosterurun-3">
+      <div class="card-group">
+        <div class="card">
+            <img src="{% static 'photos/yapi-1.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">BİOCLİMATİC - ASPENDOS GLASS</h5>
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa.</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'photos/yapi-2.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">BİOCLİMATİC - ASPENDOS PLUS</h5> 
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa.</p>
+          </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'photos/yapi-3.jpg' %}" class="video1" alt="ürün resim">
+          <div class="card-body">
+            <h5 class="card-title h-55">CAM YAPI SİSTEMLERİ</h5>
+            <p class="roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Cum ipsum sapiente ullam obcaecati culpa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!--/ürünler-->

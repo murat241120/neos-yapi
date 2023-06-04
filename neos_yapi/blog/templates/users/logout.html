@@ -1,0 +1,21 @@
+{% extends 'blog.html' %}
+{% block title %}Çıkış Sayfası{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div style="margin-top: 10%;" class="container">
+    <div class="row mt-5 pt-3">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                  <h4>Çıkış Yap</h4>
+                  <hr>
+                    <div class="alert alert-info">
+                        Başarıyla Çıkış Yaptınız!
+                    </div>
+                    <a class="nav-link" href="{% url 'login' %}">Giriş Yap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

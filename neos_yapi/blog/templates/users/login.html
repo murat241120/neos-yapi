@@ -1,0 +1,33 @@
+{% extends 'blog.html' %}
+{% block title %}Giris Yapın{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="cover">
+ <div style="margin-top: 10%;" class="container">
+    <div class="row mt-5 pt-3">
+        <div class="col-md-5 offset-md-6">
+            <div class="card">
+                <div class="card-body">
+                  <h4>Giriş Yap</h4>
+                  <hr>
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn btn-primary btn-block" type="submit" value="Giriş">
+                    </form>
+                    <hr>
+                    <div class="text-center my-3">
+                        <a class="nav-link" href="/user/password_reset/">Şifrenizi mi Unuttunuz?</a>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a class="btn btn-success" href="/user/uye_ol/">Hesap Oluşturun</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
+{% endblock %}

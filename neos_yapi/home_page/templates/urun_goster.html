@@ -1,0 +1,28 @@
+{% extends 'urunler.html' %}
+
+{% block head %}
+<title>NY | Ürün Bilgi</title>
+{% endblock head %}
+
+{% block content %}
+<!--urun page-->
+<div class="container card-1">
+    {% for i in kategori %}
+    <div class="image">
+        <a class="btn btn-primary float-start mt-3" href="/urunler/" role="button">&laquo; GERİ &raquo;</a>
+        <img src="{{i.kategori_resim.url}}" class="rounded" alt="dgfsgz">
+    </div>
+        <div class="content">
+            <h4 class="card-title text-center">{{i.kategori_isim}}</h4>
+            <p class="card-text roboto">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Cum ipsum sapiente ullam obcaecati culpa. This is a wider card with supporting 
+            text below as a natural lead-in to additional content. This content is a little 
+            bit longer. This is a wider card with supporting text below as a natural lead-in to 
+            additional content. This content is a little bit longer.</p>
+            <br><br><br>
+            <a href="tel:00000000"><button type="button" class="btn btn-outline-primary btn-lg">Bilgi Al</button></a>
+        </div>
+    {% endfor %}
+    </div>
+<!--/urun page-->
+{% endblock %}

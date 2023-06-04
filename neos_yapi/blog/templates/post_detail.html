@@ -1,0 +1,68 @@
+{% extends 'blog.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Gönderi Detay{% endblock %}
+{% block content %}
+<div style="margin-top: 10%;" class="container">
+    <div class="row mt-5 pt-3">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+               <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-thumbnail" src="{{ post.author.profilemodel.image.url }}" alt="profile-image">
+                        </div>
+                        <div class="col-md-8">
+                            <small>{{ post.date_created }}</small>
+                            {% if post.author == request.user %}
+                            <span><a class="btn btn-danger float-right btn-sm" 
+                                href="{% url 'blog-post-delete' post.id %}">Sil</a></span>
+                            <span><a class="btn btn-primary mx-2 float-right btn-sm" 
+                                href="{% url 'blog-post-edit' post.id %}">Düzenle</a></span>
+                            {% endif %}
+                            <hr>
+                            <h4>{{ post.title }}</h4>
+                            <p>
+                                {{ post.body }}
+                            </p>
+                        </div>
+                    </div>
+                    <p class="mt-3">
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          Yorumlar: {{ post.comment_count }}
+                        </a>
+                      </p>
+                      <div class="collapse" id="collapseExample">
+                        <div style="height: 250px; overflow-y: scroll;" class="card card-body">
+                          {% for comment in post.comments %}
+                           <hr>
+                            <img style="height: 9%; width: 9%; border: none;" class="img-fluid img-thumbnail rounded" src="{{ comment.user.profilemodel.image.url }}" alt="profile-image">
+                          <p class="text-justify">
+                            {{ comment.content }} <small><mark><i><b>{{comment.user}}</b></i></mark></small>
+                            
+        
+                            
+                            {%if comment.user == request.user %}
+                            <div class="btn-group justify-content-end">
+                              <span><a class="btn btn-danger btn-sm" 
+                                href="{% url 'blog-comment-delete' post.id %}">Sil</a></span>
+                            <span><a class="btn btn-primary mx-1 btn-sm" 
+                                href="{% url 'blog-comment-edit' comment.id %}">Düzenle</a></span>
+                            </div>
+                            
+                            {% endif %}
+                            
+                          </p>
+                          {% endfor %}
+                        </div>
+                      </div>
+                      <form method="POST">
+                        {% csrf_token %}
+                        {{ c_form|crispy }}
+                        <input class="btn btn-primary btn-sm" type="submit" value="Yorum ekle">
+                      </form>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

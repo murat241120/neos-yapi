@@ -1,0 +1,52 @@
+{% extends 'blog.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="margin-top: 10%;" class="container">
+    <div class="row mt-5 pt-3">
+        <div class="col-md-4">
+            <div class="card bg-info">
+                <div style="text-align: center;" class="card-body">
+                    <form action="{% url 'blog-search' %}" method="POST">
+                        {% csrf_token %}
+                        <input class="form-control me-2" type="search" 
+                        placeholder="Bloglarda Ara" aria-label="Search" name="searched">
+                        <button class="btn btn-secondary col-6 mx-auto mt-2" type="submit">Ara</button>
+                    </form>
+                </div>
+            </div>
+            <br><br>
+            <div class="card bg-info">
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn btn-secondary btn-block" type="submit" value="Gönder">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            {% for post in data %}
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="img-thumbnail" src="{{ post.author.profilemodel.image.url }}" alt="img">
+                        </div>
+                        <div class="col-md-8">
+                            <small>{{ post.date_created }} - <mark><i><b>{{post.author}}</b></i></mark> tarafından yazıldı. </small>
+                            <hr>
+                            <a style="text-decoration: none;" class="h3" href="{% url 'blog-post-detail' post.id %}">{{ post.title }}</a>
+                            <p class="text-justify my-3">
+                                {{ post.body }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

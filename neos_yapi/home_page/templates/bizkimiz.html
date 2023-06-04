@@ -1,0 +1,347 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="BİZ KİMİZ?, EKİBİMİZ, TAKIM">
+        <meta name="description" content="Neos Yapı Takımı">
+        <meta name="author" content="neosyapi.com">
+
+        <!--css bölümü link-->
+        <link rel="stylesheet" href="{% static 'css/neosstyle.css' %}">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+        <!--Footer linkleri-->
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+        
+        <!--aos kütüphanesi-->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        
+        <!--fontawosme link-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/a56c4e8e79.js" crossorigin="anonymous"></script>
+       
+        <!--scrollreveal kütüphanesi-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+          ScrollReveal({ reset: true });
+        </script>
+        <!--/scrollreveal kütüphanesi-->
+        {% block head %}
+        <title>NY | Biz Kimiz?</title>
+        {% endblock head %}
+        <style>
+            .takimbaslik{
+                text-align: center;
+                margin: 3%;
+                margin-top: 12%;
+                font-weight: 800;
+            }
+            .takim-container{
+              width: 100%;
+              margin: 5% auto;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            }
+            /*flip card style işlemleri*/
+            /*Çevirmeli kart kabı - genişliği ve yüksekliği istediğiniz gibi ayarlayın. Fareyle üzerine gelindiğinde kapağın kendisinin kutudan çıktığını göstermek için border özelliğini ekledik (3D efekti istemiyorsanız perspektifi kaldırın)*/
+          .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 300px;
+            perspective: 1000px; /* 3D efekti istemiyorsanız bunu kaldırın */
+          }
+
+          /* Bu kap, ön ve arka tarafı konumlandırmak için gereklidir. */
+          .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+          }
+
+          /* Fareyi çevirme kutusu kabının üzerine getirdiğinizde yatay bir çevirme yapın */
+          .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+
+          /*Ön ve arka tarafı konumlandırın */
+          .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden; /* Safari */
+            backface-visibility: hidden;
+          }
+
+          /* Ön tarafı stillendirin (görüntü yoksa geri dönüş) */
+          .flip-card-front {
+            background-color: rgb(241, 237, 229);
+            color: black;
+            width: 100%;
+            height: 105%;
+            border-top-left-radius: 10px;
+            border-top-right-radius:10px ;
+          }
+
+          /* Arka tarafı stilize edin */
+          .flip-card-back {
+            background-color: rgb(241, 237, 229);
+            border-top-left-radius: 10px;
+            border-top-right-radius:10px ;
+            color: #000;
+            height: 105%;
+            padding: 15%;
+            transform: rotateY(180deg);
+          }
+          /* flip resim ayarları*/
+          .avatar{
+            width: 200px;
+            height: 220px;
+            border-radius: 100%;
+            margin-top: 6%;
+          }
+          .meslek{
+            font-weight: 400;
+            font-size: 20px;
+          }
+          h4{
+            font-weight: 700;
+          }
+          /*--son--flip card style işlemleri*/
+      </style>
+        </head>
+      <body>
+        {% block header %}
+        {% include 'header2.html' %}
+        {% endblock %}
+
+        <!--takım-->
+            <h1 id="t" class="takimbaslik"><span>TAKIM/KADROMUZ</span></h1>
+            <div class="market"><i class="fa-solid fa-people-group fa-2x"></i></div>
+          <div class="takim-container">
+            <div class="card-group" >
+              <div class="card">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="avatar" src="{% static 'kisiler/kurucu-insmühendis.jpg' %}" alt="Avatar">
+                      <h4>Ali Kaya</h4>
+                      <p class="meslek">Kurucu & İnşaat Mühendisi</p>
+                    </div>
+                    <div class="flip-card-back">
+                      <h4>Ali Kaya</h4>
+                      <p class="meslek">Kurucu & İnşaat Mühendisi</p>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perferendis, dolorum pariatur?.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">HAKKINDA</h5> 
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Cum ipsum sapiente ullam obcaecati culpa.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="avatar" src="{% static 'kisiler/kurucu-ortak-prjyonetim.jpg' %}" alt="Avatar">
+                      <h4>Murat Kaya</h4>
+                      <p class="meslek">Kurucu & Ortak & Proje Yöneticisi</p>
+                    </div>
+                    <div class="flip-card-back">
+                      <h4>Murat Kaya</h4>
+                      <p class="meslek">Kurucu & Ortak & Proje Yöneticisi</p>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perferendis, dolorum pariatur?.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">HAKKINDA</h5> 
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Cum ipsum sapiente ullam obcaecati culpa.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                      <img class="avatar" src="{% static 'kisiler/kurum yoneticisi.jpg' %}" alt="Avatar">
+                      <h4>Hazal Beşel</h4>
+                      <p class="meslek">Kurum Yöneticisi</p>
+                    </div>
+                    <div class="flip-card-back">
+                      <h4>Hazal Beşel</h4>
+                      <p class="meslek">Kurum Yöneticisi</p>
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perferendis, dolorum pariatur? .</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">HAKKINDA</h5> 
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Cum ipsum sapiente ullam obcaecati culpa.</p>
+                </div>
+              </div>
+                </div>
+                <div class="card-group mt-5" >
+                  <div class="card">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img class="avatar" src="{% static 'kisiler/icmimar.jpg' %}" alt="Avatar">
+                          <h4>Emre Karan</h4>
+                          <p class="meslek">İç Mimar</p>
+                        </div>
+                        <div class="flip-card-back">
+                          <h4>Emre Karan</h4>
+                          <p class="meslek">İç Mimar</p>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Perferendis, dolorum pariatur?.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">HAKKINDA</h5> 
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Cum ipsum sapiente ullam obcaecati culpa.</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img class="avatar" src="{% static 'kisiler/mimar2k.jpg' %}" alt="Avatar">
+                          <h4>Duygu Batık</h4>
+                          <p class="meslek">Mimar</p>
+                        </div>
+                        <div class="flip-card-back">
+                          <h4>Duygu Batık</h4>
+                          <p class="meslek">Mimar</p>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Perferendis, dolorum pariatur?.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">HAKKINDA</h5> 
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Cum ipsum sapiente ullam obcaecati culpa.</p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img class="avatar" src="{% static 'kisiler/icmimar2k.jpg' %}" alt="Avatar">
+                          <h4>Öykü Öztürk</h4>
+                          <p class="meslek">İç Mimar</p>
+                        </div>
+                        <div class="flip-card-back">
+                          <h4>Öykü Öztürk</h4>
+                          <p class="meslek">İç Mimar</p>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Perferendis, dolorum pariatur? .</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">HAKKINDA</h5> 
+                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Cum ipsum sapiente ullam obcaecati culpa.</p>
+                    </div>
+                  </div>
+                    </div>
+                    <div class="card-group mt-5" >
+                      <div class="card">
+                        <div class="flip-card">
+                          <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                              <img class="avatar" src="{% static 'kisiler/mimar.jpg' %}" alt="Avatar">
+                              <h4>Bahadır Şimşek</h4>
+                              <p class="meslek">Mimar</p>
+                            </div>
+                            <div class="flip-card-back">
+                              <h4>Bahadır Şimşek</h4>
+                              <p class="meslek">Mimar</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Perferendis, dolorum pariatur?.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">HAKKINDA</h5> 
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Cum ipsum sapiente ullam obcaecati culpa.</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="flip-card">
+                          <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                              <img class="avatar" src="{% static 'kisiler/elk-elektronikmüh.jpg' %}" alt="Avatar">
+                              <h4>Kıvanç Akpınar</h4>
+                              <p class="meslek">Elektrik & Elektronik Mühendisi</p>
+                            </div>
+                            <div class="flip-card-back">
+                              <h4>Kıvanç Akpınar</h4>
+                              <p class="meslek">Elektrik & Elektronik Mühendisi</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Perferendis, dolorum pariatur?</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">HAKKINDA</h5> 
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Cum ipsum sapiente ullam obcaecati culpa.</p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="flip-card">
+                          <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                              <img class="avatar" src="{% static 'kisiler/kalite-kontrol-organizator.jpg' %}" alt="Avatar">
+                              <h4>Bahar Zeybek</h4>
+                              <p class="meslek">Kalite Kontrol & Organizatör</p>
+                            </div>
+                            <div class="flip-card-back">
+                              <h4>Bahar Zeybek</h4>
+                              <p class="meslek">Kalite Kontrol & Organizatör</p>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Perferendis, dolorum pariatur? .</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">HAKKINDA</h5> 
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Cum ipsum sapiente ullam obcaecati culpa.</p>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+                    
+        <!--//takım-->
+
+        {% block footer %}
+        {% include 'footer.html' %}
+        {% endblock %}
+
+      </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'blog.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Gönderi Detay{% endblock %}
+{% block content %}
+<div style="margin-top: 10%;" class="container">
+    <div class="row mt-5 pt-3">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                    <div class="card-body">
+                        <div class="alert alert-danger">
+                            Gönderiyi Silmek İstediğine Emin misin?
+                        </div>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <a class="btn btn-secondary btn-sm" href="{% url 'blog-post-detail' post.id %}">İptal</a>
+                            <input class="btn btn-primary btn-sm" type="submit" value="Onayla">
+                        </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="keywords" content="BLOGLAR, BLOG, CEVAPLAR, YORUM, KAYIT, GİRİŞ, ÇIKIŞ">
+      <meta name="description" content="Neos Yapı Blog">
+      <meta name="author" content="neosyapi.com">
+
+        <!--css bölümü link-->
+        <link rel="stylesheet" href="{% static 'css/neosstyle.css' %}">
+        <link rel="stylesheet" href="{% static '/style.css' %}">
+
+        <!--js-->
+        <script src="/static/anime.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+        <link href='//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+        <!--fontawosme link-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/a56c4e8e79.js" crossorigin="anonymous"></script>
+        
+        <!--scrollreveal kütüphanesi-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+          ScrollReveal({ reset: true });
+        </script>
+        <title>{% block title %}Blog Sayfası{% endblock %}</title>
+    </head>
+    <body>
+          {% block header %}
+          {% include "header2.html" %}
+          {% endblock %}  
+          <a id="button"></a>
+          {% block content %}
+          {% include "base.html" %}
+          {% endblock %}
+           
+          {% block menu %}
+          
+          {% endblock %}
+    </body>
+
+    <!-- Bootstrap js link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>      
+  <!--/Bootstrap js link -->
+</html>

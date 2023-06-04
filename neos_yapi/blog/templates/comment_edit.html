@@ -1,0 +1,20 @@
+{% extends 'blog.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Yorumu Düzenle{% endblock %}
+{% block content %}
+<div style="margin-top: 10%;" class="container">
+    <div class="row mt-5 pt-3 fluid">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+               <div class="card-body">
+                   <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input class="btn btn-primary btn-sm" type="submit" value="Kaydet">
+                   </form>
+               </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
